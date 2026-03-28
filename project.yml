@@ -1,0 +1,70 @@
+name: LawAdmissionsHQNative
+options:
+  deploymentTarget:
+    iOS: "17.0"
+    macOS: "14.0"
+settings:
+  base:
+    SWIFT_VERSION: "5.10"
+    CURRENT_PROJECT_VERSION: "1"
+    MARKETING_VERSION: "1.0"
+    DEVELOPMENT_TEAM: ""
+    CODE_SIGN_STYLE: Automatic
+configs:
+  Debug: debug
+  Release: release
+targets:
+  LawAdmissionsHQ-iPad:
+    type: application
+    platform: iOS
+    sources:
+      - path: Sources
+      - path: Assets.xcassets
+      - path: Tests
+        buildPhase: none
+    entitlements:
+      path: LawAdmissionsHQ.entitlements
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.kerriannlark.LawAdmissionsHQ.iPad
+        PRODUCT_NAME: Law Admissions HQ
+        TARGETED_DEVICE_FAMILY: "2"
+        INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad: UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight
+        INFOPLIST_KEY_UIApplicationSceneManifest_Generation: YES
+        INFOPLIST_KEY_LSApplicationCategoryType: public.app-category.education
+        INFOPLIST_KEY_CFBundleDisplayName: Law Admissions HQ
+        INFOPLIST_KEY_NSAppTransportSecurity_NSAllowsArbitraryLoads: NO
+        INFOPLIST_KEY_UIRequiresFullScreen: NO
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+        ASSETCATALOG_COMPILER_ALTERNATE_APPICON_NAMES: PremiumAppIcon
+        ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS: YES
+        ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME: AccentColor
+  LawAdmissionsHQ-Mac:
+    type: application
+    platform: macOS
+    sources:
+      - path: Sources
+      - path: Assets.xcassets
+      - path: Tests
+        buildPhase: none
+    entitlements:
+      path: LawAdmissionsHQ.entitlements
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.kerriannlark.LawAdmissionsHQ.mac
+        PRODUCT_NAME: Law Admissions HQ
+        INFOPLIST_KEY_LSApplicationCategoryType: public.app-category.education
+        INFOPLIST_KEY_CFBundleDisplayName: Law Admissions HQ
+        INFOPLIST_KEY_NSAppTransportSecurity_NSAllowsArbitraryLoads: NO
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+        ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME: AccentColor
+  LawAdmissionsHQTests:
+    type: bundle.unit-test
+    platform: macOS
+    sources:
+      - path: Tests
+    dependencies:
+      - target: LawAdmissionsHQ-Mac
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.kerriannlark.LawAdmissionsHQ.tests

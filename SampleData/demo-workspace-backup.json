@@ -1,0 +1,60 @@
+{
+  "version": "1.0",
+  "exportedAt": "2026-03-28T12:00:00Z",
+  "profile": {
+    "highestLSAT": 147,
+    "cumulativeGPA": 3.62,
+    "applicationTiming": "mid",
+    "scholarshipPriority": "high",
+    "retakeCapacity": "high",
+    "formatPreference": "hybrid",
+    "regionPriority": "ohio",
+    "careerFocus": "public-interest",
+    "packageReadiness": "mixed",
+    "costSensitivity": "high",
+    "applicationMonth": "October",
+    "timelinePressure": "manageable"
+  },
+  "dossier": {
+    "personalStatement": "I am drawn to law because I have repeatedly seen how institutional rules shape whether people can actually access stability, dignity, and meaningful relief.",
+    "resumeText": "Legal Assistant, MDK Legal \u2014 legal files, document preparation, deadline tracking, client communication support.\\nNotary Business Owner \u2014 scheduling, identity verification, document workflow, client-facing service operations.",
+    "transcriptNotes": "Kent State associate degree completed 2023. Clark Atlanta University B.A. Political Science, Magna Cum Laude, completed 2024.",
+    "workSummary": "Daily legal operations exposure, document handling, deadlines, discretion, and professionalism.",
+    "recommenderPlan": "One academic recommender and one legal/professional recommender.",
+    "schoolNotes": "Primary targets: Cleveland State, Capital, Dayton.",
+    "weakPoints": "Highest LSAT 147. Statement needs concrete legal moments.",
+    "optionalEssayIdeas": "Resilience, systems thinking, rights advocacy, legal professionalism."
+  },
+  "schools": [
+    {
+      "name": "Cleveland State University",
+      "program": "Online JD / part-time",
+      "format": "online",
+      "region": "ohio",
+      "notes": "Working-professional flexibility.",
+      "medianLSAT": null,
+      "medianGPA": null
+    },
+    {
+      "name": "Capital University Law School",
+      "program": "JD / part-time",
+      "format": "inperson",
+      "region": "ohio",
+      "notes": "Columbus network value.",
+      "medianLSAT": null,
+      "medianGPA": null
+    },
+    {
+      "name": "University of Dayton School of Law",
+      "program": "Hybrid JD / part-time",
+      "format": "hybrid",
+      "region": "ohio",
+      "notes": "Hybrid flexibility.",
+      "medianLSAT": null,
+      "medianGPA": null
+    }
+  ],
+  "prompts": [],
+  "reviews": [],
+  "tasks": []
+}
