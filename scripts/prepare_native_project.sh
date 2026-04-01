@@ -5,14 +5,27 @@ ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 cd "$ROOT"
 
 echo "== Law Admissions HQ Native setup =="
+echo "Mode: local-only (no CloudKit required, no AI required)"
+echo
 
-if ! command -v xcodegen >/dev/null 2>&1; then
-  echo "XcodeGen is not installed. Install it first, then rerun this script."
+if command -v xcodegen >/dev/null 2>&1; then
+  echo "Using installed XcodeGen binary..."
+  xcodegen generate
+elif [ -d "$ROOT/XcodeGen" ] && command -v swift >/dev/null 2>&1; then
+  echo "No global XcodeGen install found. Using bundled XcodeGen source..."
+  (
+    cd "$ROOT/XcodeGen"
+    swift run xcodegen generate --spec "$ROOT/project.yml" --project "$ROOT"
+  )
+else
+  echo "XcodeGen is not available yet."
+  echo "Best fix: install full Xcode, then either:"
+  echo "  1. install xcodegen globally, or"
+  echo "  2. keep the bundled XcodeGen folder and rerun this script"
+  echo
   echo "Project spec is ready at: $ROOT/project.yml"
   exit 1
 fi
-
-xcodegen generate
 
 echo
 if command -v open >/dev/null 2>&1; then
@@ -24,11 +37,12 @@ fi
 
 echo
 cat <<'STEPS'
-Final Xcode checklist:
-1. Set your Apple Development Team for both targets.
-2. Confirm bundle identifiers.
-3. Enable iCloud + CloudKit capabilities.
-4. Verify AppIcon is the primary app icon.
-5. Keep PremiumAppIcon as the alternate/premium asset set for final packaging.
-6. Run once on Mac, then once on iPad.
+Local-only Xcode checklist:
+1. Open LawAdmissionsHQNative.xcodeproj in Xcode.
+2. Set your Apple Development Team for both app targets.
+3. Do NOT add iCloud or CloudKit.
+4. Build and run LawAdmissionsHQ-Mac first.
+5. Build and run LawAdmissionsHQ-iPad second.
+6. Skip API key setup if you want no-AI mode.
+7. Use the app's built-in rule-based tools, backup/restore, and demo workspace locally.
 STEPS

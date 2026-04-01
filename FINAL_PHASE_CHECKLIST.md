@@ -1,36 +1,19 @@
-# Final Phase Checklist — Law Admissions HQ Native
+# Final Phase Checklist
 
-## Build + Signing
+## Free local launch
 - [ ] Install full Xcode
-- [ ] Install XcodeGen
-- [ ] Run `scripts/prepare_native_project.sh`
-- [ ] Set Apple Development Team for Mac + iPad targets
-- [ ] Confirm bundle IDs
+- [ ] Run `./scripts/prepare_native_project.sh`
+- [ ] Open `LawAdmissionsHQNative.xcodeproj`
+- [ ] Set Apple Development Team for `LawAdmissionsHQ-Mac`
+- [ ] Set Apple Development Team for `LawAdmissionsHQ-iPad`
+- [ ] Do **not** add CloudKit/iCloud
+- [ ] Run on Mac
+- [ ] Run on iPad
+- [ ] Confirm onboarding loads
+- [ ] Confirm demo workspace loads
+- [ ] Export first backup JSON
 
-## CloudKit / iCloud
-- [ ] Enable iCloud capability in Xcode
-- [ ] Enable CloudKit container
-- [ ] Confirm SwiftData sync works on Mac and iPad
-
-## App Polish
-- [x] ADHD-friendly color system
-- [x] Times New Roman typography layer
-- [x] Standard app icon
-- [x] Premium icon variant asset
-- [x] Onboarding screen
-- [x] Settings preview for theme, font, and icon direction
-
-## AI Layer
-- [ ] Add personal OpenAI API key in Settings
-- [ ] Test streaming review in each section
-- [x] Add graceful offline message checks
-
-## Data Protection
-- [x] Backup / restore JSON workflow added
-- [x] Demo workspace reseed controls added
-
-## Final Packaging
-- [x] Runtime alternate-icon preference support added
-- [ ] Validate layout on Mac windowed mode
-- [ ] Validate layout on iPad split view
-- [ ] Review CloudKit entitlements and signing one last time
+## Optional later upgrades
+- [ ] Add OpenAI API key
+- [ ] Add iCloud / CloudKit
+- [ ] Test sync across devices
